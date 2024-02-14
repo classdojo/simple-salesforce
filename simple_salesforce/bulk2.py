@@ -320,7 +320,7 @@ class _Bulk2Client:
             method="POST",
             session=self.session,
             headers=headers,
-            data=json.dumps(payload, allow_nan=False),
+            data=json.dumps(payload, allow_nan=False).encode("utf-8"),
             )
         return result.json(object_pairs_hook=OrderedDict)
 
@@ -381,7 +381,7 @@ class _Bulk2Client:
             method="PATCH",
             session=self.session,
             headers=headers,
-            data=json.dumps(payload, allow_nan=False),
+            data=json.dumps(payload, allow_nan=False).encode("utf-8"),
             )
         return result.json(object_pairs_hook=OrderedDict)
 
